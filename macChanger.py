@@ -57,6 +57,10 @@ print("Current MAC: " + str(current_mac))
 
 change_mac(options.interface, options.new_mac)
 
+#calling the get_current_mac method to get the latest MAC(After changing the MAC Address)
+#This will be used to check if the new MAC is same as the MAC specified by the user
+current_mac = get_current_mac(options.interface)
+
 #checking if the MAC is changed or not
 if current_mac == options.new_mac:
     print("[+] MAC Adress was successfully changed to " + current_mac)
